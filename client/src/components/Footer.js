@@ -1,9 +1,12 @@
-import React from 'react'; 
+import React from 'react';
+import styles from '../../src/App.css';
 
 function Footer() {
-    return (
-        <h1>Since 2023</h1>
-    )
+  return (
+    <footer className='footer'>
+      <h1 className='title'>Since 2023</h1>
+    </footer>
+  );
 }
 
 export default Footer;
