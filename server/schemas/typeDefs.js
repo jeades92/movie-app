@@ -4,7 +4,7 @@ const typeDefs = gql`
   type Movie {
     _id: ID
     title: String
-    rating: [String]!
+    ratings: [Rating]!
     reviews: [Review]!
   }
 
@@ -17,6 +17,7 @@ const typeDefs = gql`
   type Rating {
     _id: ID
     ratingText: String
+    createdAt: String
   }
 
   type Query {
