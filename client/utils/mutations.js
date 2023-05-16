@@ -29,7 +29,6 @@ export const ADD_RATING = gql`
       ratings {
         _id
         ratingText
-        createdAt
       }
     }
   }
