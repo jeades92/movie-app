@@ -35,4 +35,18 @@ export const ADD_RATING = gql`
   }
 `;
 
-// Add more mutations as needed
+export const DELETE_REVIEW = gql`
+  mutation DeleteReview($reviewId: ID!) {
+    deleteReview(reviewId: $reviewId) {
+      _id
+    }
+  }
+`;
+
+export const DELETE_RATING = gql`
+  mutation DeleteRating($ratingId: ID!) {
+    deleteRating(ratingId: $ratingId) {
+      _id
+    }
+  }
+`;
