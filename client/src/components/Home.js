@@ -1,19 +1,23 @@
 import React, { useState } from 'react';
-import Header from "./Header"
+import Header from "./Header";
+import Footer from "./Footer";
+import Card from "./Cards";
+import Login from "./ProfileForm/index";
 
-function App() {
-  const [name, setName] = useState('Guest');
-    function login() {
-    setName("Username")
-  }
 
+function Home() {
   return (
-    <div className="App">
-      <Header title={name} />
-      <p> Welcome to the Movie Site </p>
-      <button onClick={login}>Log in</button>
+    <div>
+      <Header />
+      <Card
+        title="Card Title"
+        imageUrl="card-image.jpeg"
+        body="Card Body"
+      />
+      <Login />
+      <Footer />
     </div>
-  );
+  )
 }
 
-export default App;
+export default Home;

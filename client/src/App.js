@@ -7,20 +7,13 @@ import Footer from "./components/Footer";
 import Card from "./components/Cards";
 import Login from "./components/ProfileForm/index";
 
-
 function App() {
   return (
     <div>
-      <Home />
-      <Login />
-      <Card 
-      title="Card Title"
-      imageUrl="card-image.jpeg"
-      body="Card Body"
-      />
-      <Footer /> 
+      <Home/>
     </div>
-  );
+  )
 }
+
 
 export default App;
