@@ -1,13 +1,18 @@
 import React from "react";
-// First we import Greeting from the components folder
+// import { ApolloClient, InMemoryCache, ApolloProvider } from 
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
 import Home from "./components/Home";
 import Footer from "./components/Footer";
-import Card from "./components/Cards"
-// Our App component returns the Greeting component
+import Card from "./components/Cards";
+import Login from "./components/ProfileForm/index";
+
+
 function App() {
   return (
     <div>
       <Home />
+      <Login />
       <Card 
       title="Card Title"
       imageUrl="card-image.jpeg"
