@@ -4,7 +4,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 
-import ReviewsList from "../components/ReviewsList";
+import ReviewList from "../components/ReviewList";
 import ReviewForm from "../components/ReviewForm";
 import RatingForm from "../components/RatingForm";
 import RatingList from "../components/RatingList";
@@ -29,16 +29,16 @@ const Movie = () => {
     <div>
       <h2 className="card-header">{data.title} Movie Reviews</h2>
 
-      {movie.reviews?.length > 0 && <ReviewsList reviews={movie.reviews} />}
+      {movie.reviews?.length > 0 && <ReviewList reviews={movie.reviews} />}
 
-      <div className="my-4 p-4" style={{ border: "1px dotted #1a1a1a" }}>
+      <div className="my-4 p-4" style={{ border: "1px solid grey" }}>
         <ReviewForm movieId={movie._id} />
       </div>
       <h2 className="card-header">{data.title} Movie Rating</h2>
 
       {movie.ratings?.length > 0 && <RatingList ratings={movie.ratings} />}
 
-      <div className="my-4 p-4" style={{ border: "1px dotted #1a1a1a" }}>
+      <div className="my-4 p-4" style={{ border: "1px solid grey" }}>
         <RatingForm movieId={movie._id} />
       </div>
     </div>
