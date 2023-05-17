@@ -1,51 +1,54 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const ADD_MOVIE = gql`
-  mutation AddMovie($title: String!) {
+  mutation addMovie($title: String!) {
     addMovie(title: $title) {
       _id
       title
+      reviews
+      ratings
     }
   }
 `;
 
 export const ADD_REVIEW = gql`
-  mutation AddReview($movieId: ID!, $reviewText: String!) {
-    addReview(movieId: $movieId, reviewText: $reviewText) {
+  mutation addReview($movieId: ID!, $review: String!) {
+    addReview(movieId: $movieId, review: $review) {
       _id
-      reviews {
-        _id
-        reviewText
-        createdAt
-      }
+      title
+      reviews
+    }
+  }
+`;
+
+export const REMOVE_MOVIE = gql`
+  mutation removeMovie($movieId: ID!) {
+    removeMovie(movieId: $movieId) {
+      _id
+      title
+      reviews
+      ratings
+    }
+  }
+`;
+
+export const REMOVE_REVIEW = gql`
+  mutation removeReview($movieId: ID!, $review: String!) {
+    removeReview(movieId: $movieId, review: $review) {
+      _id
+      title
+      reviews
     }
   }
 `;
 
 export const ADD_RATING = gql`
-  mutation AddRating($movieId: ID!, $ratingText: String!) {
-    addRating(movieId: $movieId, ratingText: $ratingText) {
+  mutation addRating($movieId: ID!, $rating: String!) {
+    addRating(movieId: $movieId, rating: $rating) {
       _id
-      ratings {
-        _id
-        ratingText
-      }
+      title
+      ratings
     }
   }
 `;
 
-export const DELETE_REVIEW = gql`
-  mutation DeleteReview($reviewId: ID!) {
-    deleteReview(reviewId: $reviewId) {
-      _id
-    }
-  }
-`;
-
-export const DELETE_RATING = gql`
-  mutation DeleteRating($ratingId: ID!) {
-    deleteRating(ratingId: $ratingId) {
-      _id
-    }
-  }
-`;

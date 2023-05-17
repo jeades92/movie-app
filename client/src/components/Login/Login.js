@@ -1,5 +1,5 @@
 import React, {useState} from "react"; 
-import ProfileForm from "./ProfileForm";
+import ProfileForm from "../ProfileForm";
 import { useHistory } from 'react-router-dom';
 
 function Login() {

@@ -1,6 +1,6 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
-export const GET_MOVIES = gql`
+export const QUERY_MOVIE = gql`
   query allMovies {
     movies {
       _id
@@ -11,7 +11,7 @@ export const GET_MOVIES = gql`
   }
 `;
 
-export const GET_SINGLE_MOVIE = gql`
+export const QUERY_SINGLE_MOVIE = gql`
   query singleMovie($movieId: ID!) {
     movie(movieId: $movieId) {
       _id
@@ -21,3 +21,4 @@ export const GET_SINGLE_MOVIE = gql`
     }
   }
 `;
+
