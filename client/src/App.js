@@ -3,8 +3,8 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import Home from "./pages/Home";
-import MovieList from "./components/MovieList";
-import Header from "./components/Header/Header"; 
+import Movie from "./components/MovieList";
+import Header from "./components/Header"; 
 import Footer from "./components/Footer";
 
 const client = new ApolloClient({
