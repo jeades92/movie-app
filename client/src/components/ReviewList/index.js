@@ -1,6 +1,6 @@
 import React from "react";
 
-const ReviewsList = ({ reviews }) => {
+const ReviewList = ({ reviews }) => {
   if (!reviews.length) {
     return <h3> No Reviews</h3>;
   }
@@ -23,4 +23,4 @@ const ReviewsList = ({ reviews }) => {
   );
 };
 
-export default ReviewsList;
+export default ReviewList;
