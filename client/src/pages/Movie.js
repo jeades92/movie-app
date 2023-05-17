@@ -6,6 +6,8 @@ import { useQuery } from "@apollo/client";
 
 import ReviewsList from "../components/ReviewsList";
 import ReviewForm from "../components/ReviewForm";
+import RatingForm from "../components/RatingForm";
+import RatingList from "../components/RatingList";
 
 import { QUERY_SINGLE_MOVIE } from "../utils/queries";
 
@@ -31,6 +33,13 @@ const Movie = () => {
 
       <div className="my-4 p-4" style={{ border: "1px dotted #1a1a1a" }}>
         <ReviewForm movieId={movie._id} />
+      </div>
+      <h2 className="card-header">{data.title} Movie Rating</h2>
+
+      {movie.ratings?.length > 0 && <RatingList ratings={movie.ratings} />}
+
+      <div className="my-4 p-4" style={{ border: "1px dotted #1a1a1a" }}>
+        <RatingForm movieId={movie._id} />
       </div>
     </div>
   );
