@@ -9,39 +9,24 @@ const movieSchema = new Schema({
     maxlength: 280,
     trim: true,
   },
-  ratings: [
-    {
-      ratingText: {
-        type: String,
-        required: true,
-        minlength: 1,
-        maxlength: 7,
-      },
-      createdAt: {
-        type: Date,
-        default: Date.now,
-        get: (timestamp) => dateFormat(timestamp),
-      },
-    },
-  ],
-
   reviews: [
     {
-      reviewText: {
-        type: String,
-        required: true,
-        minlength: 1,
-        maxlength: 280,
-      },
-      createdAt: {
-        type: Date,
-        default: Date.now,
-        get: (timestamp) => dateFormat(timestamp),
-      },
+      type: String,
+      required: true,
+      minlength: 1,
+      maxlength: 280,
+      trim: true,
+    },
+  ],
+  ratings: [
+    {
+      type: String,
+      required: true,
+      minlength: 1,
+      maxlength: 10,
     },
   ],
 });
-
 
 const Movie = model("Movie", movieSchema);
 

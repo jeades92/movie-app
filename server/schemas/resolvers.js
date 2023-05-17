@@ -40,11 +40,11 @@ const resolvers = {
     addMovie: async (parent, { title }) => {
       return Movie.create({ title });
     },
-    addReview: async (parent, { movieId, reviewText }) => {
+    addReview: async (parent, { movieId, review }) => {
       return Movie.findOneAndUpdate(
         { _id: movieId },
         {
-          $addToSet: { reviews: { reviewText } },
+          $addToSet: { reviews: review },
         },
         {
           new: true,
@@ -53,11 +53,11 @@ const resolvers = {
       );
     },
 
-    addRating: async (parent, { movieId, ratingText }) => {
+    addRating: async (parent, { movieId, rating }) => {
       return Movie.findOneAndUpdate(
         { _id: movieId },
         {
-          $addToSet: { ratings: { ratingText } },
+          $addToSet: { ratings: rating },
         },
         {
           new: true,
@@ -70,7 +70,7 @@ const resolvers = {
       return Movie.findOneAndDelete({ _id: movieId });
     },
     removeReview: async (parent, { movieId, reviewId }) => {
-      return Movie.findOneAndUpdate(
+      return Movie.findOneAndDelete(
         { _id: movieId },
         { $pull: { reviews: { _id: reviewId } } },
         { new: true }
