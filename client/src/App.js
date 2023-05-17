@@ -1,14 +1,14 @@
 import React from "react";
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Home from "./pages/Home";
-import Movie from "./components/MovieList";
-import Header from "./components/Header"; 
+import Movie from "./pages/Movie";
+import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 const client = new ApolloClient({
-  uri: '/graphql',
+  uri: "/graphql",
   cache: new InMemoryCache(),
 });
 
@@ -35,6 +35,5 @@ function App() {
     </ApolloProvider>
   );
 }
-
 
 export default App;
