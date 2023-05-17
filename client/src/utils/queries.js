@@ -1,21 +1,23 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
-export const GET_MOVIES = gql`
-  query GetMovies {
+export const QUERY_MOVIE = gql`
+  query allMovies {
     movies {
       _id
       title
+      ratings
+      reviews
     }
   }
 `;
 
-export const ADD_MOVIE = gql`
-  mutation AddMovie($title: String!) {
-    addMovie(title: $title) {
+export const QUERY_SINGLE_MOVIE = gql`
+  query singleMovie($movieId: ID!) {
+    movie(movieId: $movieId) {
       _id
       title
+      ratings
+      reviews
     }
   }
 `;
-
-// Add more queries and mutations as needed
