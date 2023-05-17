@@ -21,3 +21,4 @@ export const QUERY_SINGLE_MOVIE = gql`
     }
   }
 `;
+

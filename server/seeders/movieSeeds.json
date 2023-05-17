@@ -1,42 +1,53 @@
 [
   {
-    "title": "Sleepless in Seattle"
+    "title": "Sleepless in Seattle",
+    "reviews": "very tired",
+    "ratings": "5"
    
   },
   {
-    "title": "Star Wars"
-    
+    "title": "Star Wars",
+    "reviews" : "In a galaxy far far away",
+    "ratings": "5"
   },
   {
-    "title": "Break Point"
-   
+    "title": "Break Point",
+    "reviews" : "Surfs up",
+   "ratings": "5"
   },
   {
-    "title": "Matrix"
-    
+    "title": "Matrix",
+    "reviews" : "take this pil",
+    "ratings": "5"
   },
   {
-    "title": "John Wick"
-    
+    "title": "John Wick",
+    "reviews" : "Boogeyman",
+    "ratings": "5"
   },
   {
-    "title": "Constantine"
-     
+    "title": "Constantine",
+    "reviews" : "is it hot in here",
+     "ratings": "5"
   },
   {
-    "title": "The Devils Advocate"
-   
+    "title": "The Devils Advocate",
+    "reviews" : "Al pacino",
+   "ratings": "5"
   },
   {
-    "title": "A Fish Called Wanda"
-  
+    "title": "A Fish Called Wanda",
+    "reviews" : "Monty Python",
+    "ratings": "5"
   },
   {
-    "title": "Soldier"
-    
+    "title": "Soldier",
+    "reviews" :"Kurt Russel",
+    "ratings": "5"
   },
   {
-    "title": "Vendetta"
-  
+    "title": "Vendetta",
+    "reviews" : "Guy Fox",
+     "ratings": "5"
   }
 ]
