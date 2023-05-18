@@ -9,11 +9,6 @@ const Footer = () => {
   return (
     <Box as="footer" py={4} textAlign="center">
       <Box display="flex" justifyContent="center" mb={4}>
-        {location.pathname !== "/" && (
-          <Button variant="ghost" onClick={() => navigate(-1)}  mr={2}>
-            Return
-          </Button>
-        )}
       </Box>
       <Text fontSize="sm" fontWeight="bold">
         Since 2023
@@ -23,4 +18,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
