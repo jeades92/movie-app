@@ -1,12 +1,21 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { ChakraProvider, Box } from "@chakra-ui/react";
 import App from "./App";
-// Here we import bootstrap for access to some additional styling
-import "bootstrap/dist/css/bootstrap.min.css";
+
+function AppWrapper() {
+  return (
+    <ChakraProvider>
+      <Box margin="2rem" padding="1rem">
+        <App />
+      </Box>
+    </ChakraProvider>
+  );
+}
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <AppWrapper />
   </React.StrictMode>,
   document.getElementById("root")
 );

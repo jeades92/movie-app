@@ -1,27 +1,26 @@
 import React from "react";
-// Import hooks from React Router
 import { useLocation, useNavigate } from "react-router-dom";
+import { Box, Button, Text } from "@chakra-ui/react";
 
 const Footer = () => {
-  // We retrieve the current `location` object data from React Router
   const location = useLocation();
-  // We get React Router's navigate object so we can access and adjust browser history
   const navigate = useNavigate();
+
   return (
-    <footer className="w-100 mt-auto text-dark p-4">
-      <div className="container text-center mb-5">
+    <Box as="footer" py={4} textAlign="center">
+      <Box display="flex" justifyContent="center" mb={4}>
         {location.pathname !== "/" && (
-          <button
-            className="btn btn-dark mb-3"
-            // Go back to the previous page in our browser's history. -1 represents one page back in the browser history.
-            onClick={() => navigate(-1)}
-          >
-            &larr; Return
-          </button>
+          <Button variant="ghost" onClick={() => navigate(-1)}  mr={2}>
+            Return
+          </Button>
         )}
-      </div>
-    </footer>
+      </Box>
+      <Text fontSize="sm" fontWeight="bold">
+        Since 2023
+      </Text>
+    </Box>
   );
 };
 
 export default Footer;
+

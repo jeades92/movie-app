@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Home from "./pages/Home";
 import Movie from "./pages/Movie";
-import Header from "./components/Header";
+import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 const client = new ApolloClient({
@@ -18,7 +18,7 @@ function App() {
       {/* Wrap page elements in Router component to keep track of location state */}
       <Router>
         <div className="flex-column justify-flex-start min-100-vh">
-          <Header />
+          <Navbar />
           <div className="container">
             {/* Wrap Route elements in a Routes component */}
             <Routes>
