@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Box, Button, Heading, Text } from "@chakra-ui/react";
 
 import Auth from "../../utils/auth";
 
@@ -8,35 +9,47 @@ const Header = () => {
     event.preventDefault();
     Auth.logout();
   };
+
   return (
-    <header className="bg-info text-dark mb-4 py-3 display-flex align-center">
-      <div className="container flex-column justify-space-between-lg justify-center align-center text-center">
-        <Link className="text-dark" to="/">
-          <h1 className="m-0" style={{ fontSize: "3rem" }}>
+    <Box bg="info" color="dark" mb={4} py={3} display="flex" alignItems="center">
+      <Box
+        className="container"
+        display="flex"
+        flexDirection="column"
+        justifyContent={{ base: "center", lg: "space-between" }}
+        alignItems="center"
+        textAlign="center"
+      >
+        <Link to="/">
+          <Heading as="h1" fontSize={{ base: "3xl", lg: "6xl" }} m={0}>
             Movies
-          </h1>
+          </Heading>
         </Link>
-        <p className="m-0" style={{ fontSize: "1.75rem", fontWeight: "700" }}>
+        <Text fontSize={{ base: "xl", lg: "3xl" }} fontWeight="bold" m={0}>
           Movie Reviews
-        </p>
-        <div>
+        </Text>
+        <Box>
           {Auth.loggedIn() ? (
-            <button className="btn btn-lg btn-light m-2" onClick={logout}>
+            <Button variant="outline" size="lg" colorScheme="teal" m={2} onClick={logout}>
               Logout
-            </button>
+            </Button>
           ) : (
             <>
-              <Link className="btn btn-lg btn-primary m-2" to="/login">
-                Login
+              <Link to="/login">
+                <Button variant="solid" size="lg" colorScheme="teal" m={2}>
+                  Login
+                </Button>
               </Link>
-              <Link className="btn btn-lg btn-light m-2" to="/signup">
-                Signup
+              <Link to="/signup">
+                <Button variant="outline" size="lg" colorScheme="teal" m={2}>
+                  Signup
+                </Button>
               </Link>
             </>
           )}
-        </div>
-      </div>
-    </header>
+        </Box>
+      </Box>
+    </Box>
   );
 };
 
