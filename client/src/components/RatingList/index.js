@@ -1,42 +1,26 @@
 import React from "react";
-import { Box, Heading, IconButton } from "@chakra-ui/react";
-import { CloseIcon } from "@chakra-ui/icons";
 
-
-const RatingList = ({ ratings, onDeleteRating }) => {
+const RatingList = ({ ratings }) => {
   if (!ratings.length) {
-    return (
-      <Box as="h3" fontSize="xl" fontWeight="bold">
-        No Reviews
-      </Box>
-    );
+    return <h3> No Ratings</h3>;
   }
 
-
-  const handleDeleteRating = (ratingId) => {
-    onDeleteRating(ratingId);
-  };
-
-
   return (
-    <Box>
-      {ratings.map((rating) => (
-        <Box key={rating} p={4} boxShadow="md" rounded="md" bg="white" mb={4}>
-          <Heading as="h4" fontSize="lg">
-            {rating}
-          </Heading>
-          <IconButton
-            icon={<CloseIcon />}
-            colorScheme="red"
-            aria-label="Delete Rating"
-            size="sm"
-            onClick={() => handleDeleteRating(rating)}
-            />
-        </Box>
-      ))}
-    </Box>
+    <div>
+      <div className="flex-row justify-space-between my-4">
+        {ratings &&
+          ratings.map((rating) => (
+            <div key={rating} className="col-12 col-xl-6">
+              <div className="card mb-3">
+                <h4 className="card-header bg-dark text-light p-2 m-0">
+                  {rating} <br />
+                </h4>
+              </div>
+            </div>
+          ))}
+      </div>
+    </div>
   );
 };
-
 
 export default RatingList;

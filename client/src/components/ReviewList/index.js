@@ -1,46 +1,26 @@
-
-
 import React from "react";
-import { Box, Heading, IconButton } from "@chakra-ui/react";
-import { CloseIcon } from "@chakra-ui/icons";
 
-
-const ReviewList = ({ reviews, onDeleteReview }) => {
+const ReviewList = ({ reviews }) => {
   if (!reviews.length) {
-    return (
-      <Box as="h3" fontSize="xl" fontWeight="bold">
-        No Reviews
-      </Box>
-    );
+    return <h3> No Reviews</h3>;
   }
 
-
-  const handleDeleteReview = (reviewId) => {
-    onDeleteReview(reviewId);
-  };
-
-
   return (
-    <Box>
-      {reviews.map((review) => (
-        <Box key={review} mb={4}>
-          <Box bg="white" p={4} boxShadow="md" rounded="md">
-            <Heading as="h4" fontSize="lg" mb={2}>
-              {review}
-            </Heading>
-            <IconButton
-              icon={<CloseIcon />}
-              colorScheme="red"
-              aria-label="Delete Review"
-              size="sm"
-              onClick={() => handleDeleteReview(review)}
-            />
-          </Box>
-        </Box>
-      ))}
-    </Box>
+    <div>
+      <div className="flex-row justify-space-between my-4">
+        {reviews &&
+          reviews.map((review) => (
+            <div key={review} className="col-12 col-xl-6">
+              <div className="card mb-3">
+                <h4 className="card-header bg-dark text-light p-2 m-0">
+                  {review} <br />
+                </h4>
+              </div>
+            </div>
+          ))}
+      </div>
+    </div>
   );
 };
-
 
 export default ReviewList;
