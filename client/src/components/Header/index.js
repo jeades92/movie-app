@@ -21,6 +21,11 @@ const Header = () => {
       alignItems="center"
       justifyContent="space-between"
     >
+      <Link to="/">
+        <Button variant="solid" size="sm" colorScheme="whiteAlpha" m={2}>
+          Home
+        </Button>
+      </Link>
       <Box flex="1" textAlign="center">
         <Link to="/">
           <Heading as="h1" fontSize={{ base: "3xl", lg: "6xl" }} m={0}>
@@ -30,9 +35,11 @@ const Header = () => {
       </Box>
       <Box>
         {Auth.loggedIn() ? (
-          <Button variant="outline" size="sm" colorScheme="whiteAlpha" m={2} onClick={logout}>
-            Logout
-          </Button>
+          <>
+            <Button variant="outline" size="sm" colorScheme="whiteAlpha" m={2} onClick={logout}>
+              Logout
+            </Button>
+          </>
         ) : (
           <>
             <Link to="/login">
