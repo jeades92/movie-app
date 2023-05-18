@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
-import { Box, Button, FormControl, FormErrorMessage, FormLabel, Input } from "@chakra-ui/react";
+import { Box, Button, FormControl, FormErrorMessage, FormLabel, Input, Flex } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 import { ADD_RATING } from "../../utils/mutations";
 
@@ -43,6 +44,12 @@ const RatingForm = ({ movieId }) => {
         <Button mt={4} colorScheme="teal" type="submit">
           Add a rating
         </Button>
+
+        <Flex justifyContent="center" mt={4}>
+          <Button as={Link} to="/" colorScheme="teal">
+            Home
+          </Button>
+        </Flex>
       </form>
     </Box>
   );

@@ -23,7 +23,7 @@ const MovieList = ({ movies, title }) => {
               {movie.reviews?.length} movie review{movie.reviews?.length !== 1 && "s"}
             </Text>
             <ChakraLink as={Link} to={`/movies/${movie._id}`} color="teal.500" mt={2}>
-              Add a review
+              Add Rating & Review
             </ChakraLink>
           </Box>
         </Box>
