@@ -1,7 +1,9 @@
 import React from "react";
-import { Box, Heading } from "@chakra-ui/react";
+import { Box, Heading, IconButton } from "@chakra-ui/react";
+import { CloseIcon } from "@chakra-ui/icons";
 
-const RatingList = ({ ratings }) => {
+
+const RatingList = ({ ratings, onDeleteRating }) => {
   if (!ratings.length) {
     return (
       <Box as="h3" fontSize="xl" fontWeight="bold">
@@ -10,6 +12,12 @@ const RatingList = ({ ratings }) => {
     );
   }
 
+
+  const handleDeleteRating = (ratingId) => {
+    onDeleteRating(ratingId);
+  };
+
+
   return (
     <Box>
       {ratings.map((rating) => (
@@ -17,10 +25,18 @@ const RatingList = ({ ratings }) => {
           <Heading as="h4" fontSize="lg">
             {rating}
           </Heading>
+          <IconButton
+            icon={<CloseIcon />}
+            colorScheme="red"
+            aria-label="Delete Rating"
+            size="sm"
+            onClick={() => handleDeleteRating(rating)}
+            />
         </Box>
       ))}
     </Box>
   );
 };
+
 
 export default RatingList;
