@@ -52,6 +52,9 @@ function App() {
               {/* Define routes using the Route component to render different page components at different paths */}
               {/* Define a default route that will render the Home component */}
               <Route path="/" element={<Home />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
+
               {/* Define a route that will take in variable data */}
               <Route path="/movies/:movieId" element={<Movie />} />
             </Routes>
