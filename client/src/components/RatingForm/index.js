@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
+import { Box, Button, FormControl, FormErrorMessage, FormLabel, Input } from "@chakra-ui/react";
 
 import { ADD_RATING } from "../../utils/mutations";
 
 const RatingForm = ({ movieId }) => {
   const [rating, setRating] = useState("");
-
   const [addRating, { error }] = useMutation(ADD_RATING);
 
   const handleFormSubmit = async (event) => {
@@ -23,33 +23,28 @@ const RatingForm = ({ movieId }) => {
   };
 
   return (
-    <div>
-      <h4>Add a rating.</h4>
-      <form
-        className="flex-row justify-center justify-space-between-md align-center"
-        onSubmit={handleFormSubmit}
-      >
-        <div className="col-12 col-lg-9">
-          <input
+    <Box>
+      <Box as="h4" fontSize="xl" fontWeight="bold" mb={4}>
+        Add a rating.
+      </Box>
+
+      <form onSubmit={handleFormSubmit}>
+        <FormControl id="rating" isRequired>
+          <FormLabel>Rating</FormLabel>
+          <Input
+            type="text"
             placeholder="Add a rating"
             value={rating}
-            className="form-input w-100"
             onChange={(event) => setRating(event.target.value)}
           />
-        </div>
+          <FormErrorMessage>{error && "Uh oh... Something went wrong"}</FormErrorMessage>
+        </FormControl>
 
-        <div className="col-12 col-lg-3">
-          <button className="btn btn-info btn-block py-3" type="submit">
-            add a rating
-          </button>
-        </div>
-        {error && (
-          <div className="col-12 my-3 bg-danger text-white p-3">
-            Add a rating Uh oh...
-          </div>
-        )}
+        <Button mt={4} colorScheme="teal" type="submit">
+          Add a rating
+        </Button>
       </form>
-    </div>
+    </Box>
   );
 };
 

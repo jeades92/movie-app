@@ -1,8 +1,7 @@
 import React from "react";
-
-// Import the `useParams()` hook
 import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
+import { Box, Heading } from "@chakra-ui/react";
 
 import ReviewList from "../components/ReviewList";
 import ReviewForm from "../components/ReviewForm";
@@ -12,11 +11,8 @@ import RatingList from "../components/RatingList";
 import { QUERY_SINGLE_MOVIE } from "../utils/queries";
 
 const Movie = () => {
-  // Use `useParams()` to retrieve value of the route parameter `:movieId`
   const { movieId } = useParams();
-
   const { loading, data } = useQuery(QUERY_SINGLE_MOVIE, {
-    // pass URL parameter
     variables: { movieId: movieId },
   });
 
@@ -25,23 +21,29 @@ const Movie = () => {
   if (loading) {
     return <div>Loading...</div>;
   }
+
   return (
-    <div>
-      <h2 className="card-header">{data.title} Movie Reviews</h2>
+    <Box p={4}>
+      <Heading as="h2" size="lg" mb={4}>
+        {data.title} Movie Reviews
+      </Heading>
 
       {movie.reviews?.length > 0 && <ReviewList reviews={movie.reviews} />}
 
-      <div className="my-4 p-4" style={{ border: "1px solid grey" }}>
+      <Box mt={8}>
         <ReviewForm movieId={movie._id} />
-      </div>
-      <h2 className="card-header">{data.title} Movie Rating</h2>
+      </Box>
+
+      <Heading as="h2" size="lg" mt={8} mb={4}>
+        {data.title} Movie Rating
+      </Heading>
 
       {movie.ratings?.length > 0 && <RatingList ratings={movie.ratings} />}
 
-      <div className="my-4 p-4" style={{ border: "1px solid grey" }}>
+      <Box mt={8}>
         <RatingForm movieId={movie._id} />
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 };
 
