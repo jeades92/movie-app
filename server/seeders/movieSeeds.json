@@ -49,5 +49,25 @@
     "title": "Vendetta",
     "reviews" : "Guy Fox",
      "ratings": "5"
+  },
+  {
+    "title": "Donnie Darko",
+    "reviews" : "I'm voting for Dukakis",
+     "ratings": "5"
+  },
+  {
+    "title": "The Crow",
+    "reviews" : "Brandon Lee",
+     "ratings": "5"
+  },
+  {
+    "title": "The Fifth Element",
+    "reviews" : "Bruce Willis",
+     "ratings": "5"
+  },
+  {
+    "title": "The Last Samurai",
+    "reviews" : "Tom Cruise",
+     "ratings": "5"
   }
 ]
