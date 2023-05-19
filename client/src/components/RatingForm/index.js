@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
-import { Box, Button, FormControl, FormErrorMessage, FormLabel, Input, Flex } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { Box, Button, FormControl, FormErrorMessage, FormLabel, Input } from "@chakra-ui/react";
 
 import { ADD_RATING } from "../../utils/mutations";
 
