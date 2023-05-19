@@ -45,11 +45,6 @@ const RatingForm = ({ movieId }) => {
           Add a rating
         </Button>
 
-        <Flex justifyContent="center" mt={4}>
-          <Button as={Link} to="/" colorScheme="teal">
-            Home
-          </Button>
-        </Flex>
       </form>
     </Box>
   );
