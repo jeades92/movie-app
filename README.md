@@ -8,7 +8,7 @@
 
 Heroku deployment:
 
-[Heroku Link: movie-app-nc.herokuapp.com](https://movie-app-nc.herokuapp.com/login)
+[Heroku Link: movie-app-nc.herokuapp.com](https://movie-app-nc.herokuapp.com/)
 
 
 
